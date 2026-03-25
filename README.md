@@ -38,4 +38,3 @@ GroupWebShop/
 - Bootstrap
 - Git & GitHub
 - GitHub Pages
-
