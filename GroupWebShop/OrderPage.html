@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order – The MEJVEN Store</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="StyleWebShop.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="container">
+            <a href="Homepage.html" class="navbar-brand">The MEJVEN Store</a>
+            <span class="navbar-text">Orderpage</span>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+
+        <!-- Produktinfo (fylls i via JS) -->
+        <div class="row mb-5">
+            <div class="col-md-5 text-center">
+                <img id="product-img" src="#" class="img-fluid rounded" alt="Produktbild">
+            </div>
+
+            <div class="col-md-7">
+                <h2 id="product-name">Produktnamn</h2>
+                <p id="product-description">Produktbeskrivning kommer här.</p>
+                <h4 class="text-success" id="product-price">Price: 0 SEK</h4>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Orderformulär -->
+        <h3 class="mb-4">Order form</h3>
+
+        <form id="order-form" class="row g-3">
+
+            <div class="col-md-6">
+                <label class="form-label">Firstname</label>
+                <input type="text" class="form-control" required>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Lastname</label>
+                <input type="text" class="form-control" required>
+            </div>
+
+            <div class="col-12">
+                <label class="form-label">Address</label>
+                <input type="text" class="form-control" required>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Postal code</label>
+                <input type="text" class="form-control" required>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">City</label>
+                <input type="text" class="form-control" required>
+            </div>
+
+            <div class="col-12">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" required>
+            </div>
+
+            <div class="col-12">
+                <label class="form-label">Message (optional)</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="col-12 text-end">
+                <button type="submit" class="btn btn-dark btn-lg">Confirm order</button>
+            </div>
+
+        </form>
+        
+        <div class="modal fade" id="orderModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Order received</h5>
+                    </div>
+                
+                <div class="modal-body"> Your order succeeded! Thank you for your order. <br> / The MEJVEN Team
+                </div>
+                <div class="modal-footer">
+            <button class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
