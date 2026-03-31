@@ -37,37 +37,50 @@
         <!-- Orderformulär -->
         <h3 class="mb-4">Order form</h3>
 
-        <form id="order-form" class="row g-3">
+        <form id="order-form" class="row g-3 needs-validation" novalidate>
 
             <div class="col-md-6">
                 <label class="form-label">Firstname</label>
-                <input type="text" class="form-control" required>
+                <input type="text" id="firstname" class="form-control" required>
+                <div class="invalid-feedback">Firstname must be 2-50 characters.</div>
             </div>
 
             <div class="col-md-6">
                 <label class="form-label">Lastname</label>
-                <input type="text" class="form-control" required>
+                <input type="text" id="lastname" class="form-control" required>
+                <div class="invalid-feedback">Lastname must be 2-50 characters.</div>
             </div>
 
             <div class="col-12">
                 <label class="form-label">Address</label>
-                <input type="text" class="form-control" required>
+                <input type="text" id="address" class="form-control" required>
+                <div class="invalid-feedback">Address must be 2-50 characters.</div>
             </div>
 
             <div class="col-md-6">
                 <label class="form-label">Postal code</label>
-                <input type="text" class="form-control" required>
+                <input type="text" id="postal" class="form-control" required>
+                <div class="invalid-feedback">Postal code must be exactly 5 digits.</div>
             </div>
 
             <div class="col-md-6">
                 <label class="form-label">City</label>
-                <input type="text" class="form-control" required>
+                <input type="text" id="city" class="form-control" required>
+                <div class="invalid-feedback">City must be 2-20 characters.</div>
             </div>
 
             <div class="col-12">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-control" required>
+                <input type="email" id="email" class="form-control" required>
+                <div class="invalid-feedback">Enter a valid email (max 50 characters).</div>
             </div>
+
+            <div class="col-12">
+                <label class="form-label">Phone</label>
+                <input type="text" id="phone" class="form-control">
+                <div class="invalid-feedback">Phone may contain digits, (), - and max 20 characters.</div>
+            </div>
+            
 
             <div class="col-12">
                 <label class="form-label">Message (optional)</label>
