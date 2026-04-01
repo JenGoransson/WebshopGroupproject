@@ -1,6 +1,36 @@
-//Updaterade koden för att göra det enklare och säkrare när man ska placera en order
-//genom att lägga logiken i en if statement.
+async function loadProducts() {
+    const container = document.getElementById("productContainer");
 
+    try {
+        const response = await fetch("https://fakestoreapi.com/products")
+        const products = await response.json();
+
+
+        products.forEach(product => {
+            const col = document.createElement("div");
+            col.className = "col-6 col-sm-6 col-md-4 col-lg-3";
+
+            col.innerHTML = `
+            <div class="card h-100">
+               <img src="${product.image}" class="card-img-top product-img" alt="${product.title}">
+               <div class="card-body text-center">
+                  <h5 class="card-title">${product.title}</h5>
+                  <p class="card-text">${product.price}$</p>
+                  <a href="#" class="btn btn-dark buy-btn" data-id="${product.id}">Buy</a>
+                </div>
+            </div>
+            `;
+            container.appendChild(col); //Detta lägger till korten på startsidan
+        });
+    } catch (error) {
+        console.error("Something went wrong: ", error);
+    }
+}
+
+loadProducts();
+
+
+//Denna bör ligga i orderpage.js
 document.addEventListener("DOMContentLoaded", () =>  {
     const form = document.getElementById("order-form");
 
