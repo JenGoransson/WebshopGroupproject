@@ -2,8 +2,9 @@ async function loadProducts() {
     const container = document.getElementById("productContainer");
 
     try {
-        const response = await fetch("https://fakestoreapi.com/products")
-        const products = await response.json();
+        const response = await fetch("https://dummyjson.com/products")
+        const data = await response.json();
+        const products = data.products;
 
 
         products.forEach(product => {
@@ -12,7 +13,7 @@ async function loadProducts() {
 
             col.innerHTML = `
             <div class="card h-100">
-               <img src="${product.image}" class="card-img-top product-img" alt="${product.title}">
+               <img src="${product.thumbnail}" class="card-img-top product-img" alt="${product.title}">
                <div class="card-body text-center">
                   <h5 class="card-title">${product.title}</h5>
                   <p class="card-text">${product.price}$</p>
