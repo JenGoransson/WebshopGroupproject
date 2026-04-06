@@ -17,7 +17,7 @@ async function loadProducts() {
                <div class="card-body text-center">
                   <h5 class="card-title">${product.title}</h5>
                   <p class="card-text">${product.price}$</p>
-                  <a href="#" class="btn btn-dark buy-btn" data-id="${product.id}">Buy</a>
+                  <a href="OrderPage.html?id=${product.id}" class="btn btn-dark">Buy</a>
                 </div>
             </div>
             `;
