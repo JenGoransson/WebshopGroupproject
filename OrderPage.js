@@ -19,7 +19,7 @@ async function loadProduct() {
         productImg.src = product.thumbnail;
         productName.textContent = product.title;
         productDescription.textContent = product.description;
-        productPrice.textContent = `Price: ${product.price} SEk`;
+        productPrice.textContent = `Price: ${product.price} $`;
     }catch (error){
         productName.textContent = "Error loading product";
         console.error(error);
