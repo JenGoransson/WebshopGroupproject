@@ -56,7 +56,7 @@ form.addEventListener("submit", (event) => {
     isValid = setInvalid(city, city.value.trim().length < 2 || city.value.length > 20) && isValid;
 
     isValid = setInvalid(postal, !/^\d{5}$/.test(postal.value)) && isValid;
-    isValid = setInvalid(email, !email.value.includes("@") || email.value.length > 50) && isValid;
+    isValid = setInvalid(email, !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value) || email.value.length > 50) && isValid;
 
     const phoneRegex = /^[0-9()\-\s]+$/;
     isValid = setInvalid(phone, !phoneRegex.test(phone.value) || phone.value.length > 20) && isValid;
