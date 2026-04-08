@@ -50,16 +50,16 @@ form.addEventListener("submit", (event) => {
 
     let isValid = true;
 
-    isValid &= setInvalid(firstName, firstName.value.trim().length < 2 || firstName.value.length > 50);
-    isValid &= setInvalid(lastName, lastName.value.trim().length < 2 || lastName.value.length > 50);
-    isValid &= setInvalid(address, address.value.trim().length < 2 || address.value.length > 50);
-    isValid &= setInvalid(city, city.value.trim().length < 2 || city.value.length > 20);
+    isValid = setInvalid(firstName, firstName.value.trim().length < 2 || firstName.value.length > 50) && isValid;
+    isValid = setInvalid(lastName, lastName.value.trim().length < 2 || lastName.value.length > 50) && isValid;
+    isValid = setInvalid(address, address.value.trim().length < 2 || address.value.length > 50) && isValid;
+    isValid = setInvalid(city, city.value.trim().length < 2 || city.value.length > 20) && isValid;
 
-    isValid &= setInvalid(postal, !/^\d{5}$/.test(postal.value));
-    isValid &= setInvalid(email, !email.value.includes("@") || email.value.length > 50);
+    isValid = setInvalid(postal, !/^\d{5}$/.test(postal.value)) && isValid;
+    isValid = setInvalid(email, !email.value.includes("@") || email.value.length > 50) && isValid;
 
     const phoneRegex = /^[0-9()\-\s]+$/;
-    isValid &= setInvalid(phone, !phoneRegex.test(phone.value) || phone.value.length > 20);
+    isValid = setInvalid(phone, !phoneRegex.test(phone.value) || phone.value.length > 20) && isValid;
 
     if (isValid) {
         const modal = new bootstrap.Modal(document.getElementById("orderModal"));
